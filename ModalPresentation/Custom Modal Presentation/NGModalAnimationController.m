@@ -64,26 +64,10 @@ static NSTimeInterval const kTransitionDuration = 2;
     // add toView into the view hierarchy when presenting
     if (self.mode == NGModalAnimationControllerModePresentation)
     {
+        // using constraints instead coused a bug during device rotation on iOS 7
+        toView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        toView.frame = containerView.bounds;
         [containerView addSubview:toView];
-        
-        toView.translatesAutoresizingMaskIntoConstraints = NO;
-        NSDictionary * views = NSDictionaryOfVariableBindings(toView);
-        [containerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[toView]|" options:0 metrics:nil views:views]];
-        [containerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[toView]|" options:0 metrics:nil views:views]];
-        
-        NSLog(@"CSModalAnimationControllerModePresentation");
-        NSLog(@"fromView initial frame %@", NSStringFromCGRect([transitionContext initialFrameForViewController:fromViewController]));
-        NSLog(@"fromView final frame   %@", NSStringFromCGRect([transitionContext finalFrameForViewController:fromViewController]));
-        NSLog(@"toView initial frame   %@", NSStringFromCGRect([transitionContext initialFrameForViewController:toViewController]));
-        NSLog(@"toView final frame     %@", NSStringFromCGRect([transitionContext finalFrameForViewController:toViewController]));
-    }
-    else
-    {
-        NSLog(@"NGModalAnimationControllerModeDismissal");
-        NSLog(@"fromView initial frame %@", NSStringFromCGRect([transitionContext initialFrameForViewController:fromViewController]));
-        NSLog(@"fromView final frame   %@", NSStringFromCGRect([transitionContext finalFrameForViewController:fromViewController]));
-        NSLog(@"toView initial frame   %@", NSStringFromCGRect([transitionContext initialFrameForViewController:toViewController]));
-        NSLog(@"toView final frame     %@", NSStringFromCGRect([transitionContext finalFrameForViewController:toViewController]));
     }
     
     // find the presented view controller's view
