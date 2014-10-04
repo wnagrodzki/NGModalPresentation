@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "SampleViewController.h"
+#import "UIViewController+NGModalPresentation.h"
 
 
 @interface ViewController () <SampleViewControllerDelegate>
@@ -22,8 +23,9 @@
 - (IBAction)presentModalViewControllerButtonTapped:(id)sender
 {
     SampleViewController * sampleViewController = [[SampleViewController alloc] init];
+    sampleViewController.preferredContentSize = CGSizeMake(320, 640);
     sampleViewController.delegate = self;
-    [self presentViewController:sampleViewController animated:YES completion:nil];
+    [self ng_presentViewController:sampleViewController animated:YES completion:nil];
 }
 
 #pragma mark - SampleViewControllerDelegate

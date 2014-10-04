@@ -15,6 +15,9 @@
 		2E4683BB19DFE437001ECA2E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E4683B919DFE437001ECA2E /* LaunchScreen.xib */; };
 		2E4683C719DFE438001ECA2E /* ModalPresentationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4683C619DFE438001ECA2E /* ModalPresentationTests.m */; };
 		2E4683D219DFE60D001ECA2E /* SampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4683D119DFE60D001ECA2E /* SampleViewController.m */; };
+		2E4683D619DFEFD3001ECA2E /* UIViewController+NGModalPresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4683D519DFEFD3001ECA2E /* UIViewController+NGModalPresentation.m */; };
+		2E4683D919DFF197001ECA2E /* NGModalTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4683D819DFF197001ECA2E /* NGModalTransitioningDelegate.m */; };
+		2E4683DC19DFF39D001ECA2E /* NGModalAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4683DB19DFF39D001ECA2E /* NGModalAnimationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,12 @@
 		2E4683C619DFE438001ECA2E /* ModalPresentationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModalPresentationTests.m; sourceTree = "<group>"; };
 		2E4683D019DFE60D001ECA2E /* SampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleViewController.h; sourceTree = "<group>"; };
 		2E4683D119DFE60D001ECA2E /* SampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleViewController.m; sourceTree = "<group>"; };
+		2E4683D419DFEFD3001ECA2E /* UIViewController+NGModalPresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NGModalPresentation.h"; sourceTree = "<group>"; };
+		2E4683D519DFEFD3001ECA2E /* UIViewController+NGModalPresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NGModalPresentation.m"; sourceTree = "<group>"; };
+		2E4683D719DFF197001ECA2E /* NGModalTransitioningDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGModalTransitioningDelegate.h; sourceTree = "<group>"; };
+		2E4683D819DFF197001ECA2E /* NGModalTransitioningDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGModalTransitioningDelegate.m; sourceTree = "<group>"; };
+		2E4683DA19DFF39D001ECA2E /* NGModalAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGModalAnimationController.h; sourceTree = "<group>"; };
+		2E4683DB19DFF39D001ECA2E /* NGModalAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGModalAnimationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +103,7 @@
 				2E4683AA19DFE437001ECA2E /* Supporting Files */,
 				2E4683D019DFE60D001ECA2E /* SampleViewController.h */,
 				2E4683D119DFE60D001ECA2E /* SampleViewController.m */,
+				2E4683D319DFEF2F001ECA2E /* Custom Modal Presentation */,
 			);
 			path = ModalPresentation;
 			sourceTree = "<group>";
@@ -122,6 +132,19 @@
 				2E4683C519DFE438001ECA2E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2E4683D319DFEF2F001ECA2E /* Custom Modal Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2E4683D419DFEFD3001ECA2E /* UIViewController+NGModalPresentation.h */,
+				2E4683D519DFEFD3001ECA2E /* UIViewController+NGModalPresentation.m */,
+				2E4683D719DFF197001ECA2E /* NGModalTransitioningDelegate.h */,
+				2E4683D819DFF197001ECA2E /* NGModalTransitioningDelegate.m */,
+				2E4683DA19DFF39D001ECA2E /* NGModalAnimationController.h */,
+				2E4683DB19DFF39D001ECA2E /* NGModalAnimationController.m */,
+			);
+			path = "Custom Modal Presentation";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,10 +246,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E4683D619DFEFD3001ECA2E /* UIViewController+NGModalPresentation.m in Sources */,
 				2E4683B319DFE437001ECA2E /* ViewController.m in Sources */,
 				2E4683B019DFE437001ECA2E /* AppDelegate.m in Sources */,
+				2E4683D919DFF197001ECA2E /* NGModalTransitioningDelegate.m in Sources */,
 				2E4683D219DFE60D001ECA2E /* SampleViewController.m in Sources */,
 				2E4683AD19DFE437001ECA2E /* main.m in Sources */,
+				2E4683DC19DFF39D001ECA2E /* NGModalAnimationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
