@@ -9,7 +9,7 @@
 #import "NGModalAnimationController.h"
 
 
-static NSTimeInterval const kTransitionDuration = 0.5;
+static NSTimeInterval const kTransitionDuration = 2;
 
 
 @interface NGModalAnimationController ()
@@ -119,6 +119,20 @@ static NSTimeInterval const kTransitionDuration = 0.5;
     {
         [containerView addSubview:toView];
         [self centerView:toView withSize:toViewController.preferredContentSize inView:containerView];
+        
+        NSLog(@"CSModalAnimationControllerModePresentation");
+        NSLog(@"fromView initial frame %@", NSStringFromCGRect([transitionContext initialFrameForViewController:fromViewController]));
+        NSLog(@"fromView final frame   %@", NSStringFromCGRect([transitionContext finalFrameForViewController:fromViewController]));
+        NSLog(@"toView initial frame   %@", NSStringFromCGRect([transitionContext initialFrameForViewController:toViewController]));
+        NSLog(@"toView final frame     %@", NSStringFromCGRect([transitionContext finalFrameForViewController:toViewController]));
+    }
+    else
+    {
+        NSLog(@"NGModalAnimationControllerModeDismissal");
+        NSLog(@"fromView initial frame %@", NSStringFromCGRect([transitionContext initialFrameForViewController:fromViewController]));
+        NSLog(@"fromView final frame   %@", NSStringFromCGRect([transitionContext finalFrameForViewController:fromViewController]));
+        NSLog(@"toView initial frame   %@", NSStringFromCGRect([transitionContext initialFrameForViewController:toViewController]));
+        NSLog(@"toView final frame     %@", NSStringFromCGRect([transitionContext finalFrameForViewController:toViewController]));
     }
     
     // find the presented view controller's view
