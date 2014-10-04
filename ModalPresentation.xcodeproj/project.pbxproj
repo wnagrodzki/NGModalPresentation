@@ -14,6 +14,7 @@
 		2E4683B819DFE437001ECA2E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4683B719DFE437001ECA2E /* Images.xcassets */; };
 		2E4683BB19DFE437001ECA2E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E4683B919DFE437001ECA2E /* LaunchScreen.xib */; };
 		2E4683C719DFE438001ECA2E /* ModalPresentationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4683C619DFE438001ECA2E /* ModalPresentationTests.m */; };
+		2E4683D219DFE60D001ECA2E /* SampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4683D119DFE60D001ECA2E /* SampleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		2E4683C019DFE437001ECA2E /* ModalPresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModalPresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E4683C519DFE438001ECA2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E4683C619DFE438001ECA2E /* ModalPresentationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModalPresentationTests.m; sourceTree = "<group>"; };
+		2E4683D019DFE60D001ECA2E /* SampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleViewController.h; sourceTree = "<group>"; };
+		2E4683D119DFE60D001ECA2E /* SampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				2E4683B719DFE437001ECA2E /* Images.xcassets */,
 				2E4683B919DFE437001ECA2E /* LaunchScreen.xib */,
 				2E4683AA19DFE437001ECA2E /* Supporting Files */,
+				2E4683D019DFE60D001ECA2E /* SampleViewController.h */,
+				2E4683D119DFE60D001ECA2E /* SampleViewController.m */,
 			);
 			path = ModalPresentation;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 			files = (
 				2E4683B319DFE437001ECA2E /* ViewController.m in Sources */,
 				2E4683B019DFE437001ECA2E /* AppDelegate.m in Sources */,
+				2E4683D219DFE60D001ECA2E /* SampleViewController.m in Sources */,
 				2E4683AD19DFE437001ECA2E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
