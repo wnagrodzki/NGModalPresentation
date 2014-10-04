@@ -7,21 +7,30 @@
 //
 
 #import "ViewController.h"
+#import "SampleViewController.h"
 
-@interface ViewController ()
+
+@interface ViewController () <SampleViewControllerDelegate>
 
 @end
 
+
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+#pragma mark - IBActions
+
+- (IBAction)presentModalViewControllerButtonTapped:(id)sender
+{
+    SampleViewController * sampleViewController = [[SampleViewController alloc] init];
+    sampleViewController.delegate = self;
+    [self presentViewController:sampleViewController animated:YES completion:nil];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - SampleViewControllerDelegate
+
+- (void)sampleViewControllerRequiredDismiss:(SampleViewController *)sampleViewController
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
