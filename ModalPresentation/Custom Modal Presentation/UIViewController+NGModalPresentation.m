@@ -7,6 +7,7 @@
 //
 
 #import "UIViewController+NGModalPresentation.h"
+#import "NGPresentationViewController.h"
 #import "NGModalTransitioningDelegate.h"
 #import <objc/runtime.h>
 
@@ -18,9 +19,10 @@ static void * const kTransitioningDelegateKey = (void *)&kTransitioningDelegateK
 
 - (void)ng_presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion
 {
-    viewControllerToPresent.modalPresentationStyle = UIModalPresentationCustom;
-    viewControllerToPresent.transitioningDelegate = [self ng_modalTransitioningDelegate];
-    [self presentViewController:viewControllerToPresent animated:flag completion:completion];
+    NGPresentationViewController * presentationViewControllr = [[NGPresentationViewController alloc] initWithPresentedViewController:viewControllerToPresent];
+    presentationViewControllr.modalPresentationStyle = UIModalPresentationCustom;
+    presentationViewControllr.transitioningDelegate = [self ng_modalTransitioningDelegate];
+    [self presentViewController:presentationViewControllr animated:flag completion:completion];
 }
 
 - (NGModalTransitioningDelegate *)ng_modalTransitioningDelegate

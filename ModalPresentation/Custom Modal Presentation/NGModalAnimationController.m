@@ -32,59 +32,6 @@ static NSTimeInterval const kTransitionDuration = 2;
     return self;
 }
 
-#pragma mark - Private Instance Methods
-
-- (void)centerView:(UIView *)toView withSize:(CGSize)toViewSize inView:(UIView *)inView
-{
-    toView.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    [inView addConstraint:[NSLayoutConstraint constraintWithItem:toView
-                                                       attribute:NSLayoutAttributeCenterX
-                                                       relatedBy:NSLayoutRelationEqual
-                                                          toItem:inView
-                                                       attribute:NSLayoutAttributeCenterX
-                                                      multiplier:1
-                                                        constant:0]];
-    
-    [inView addConstraint:[NSLayoutConstraint constraintWithItem:toView
-                                                       attribute:NSLayoutAttributeCenterY
-                                                       relatedBy:NSLayoutRelationEqual
-                                                          toItem:inView
-                                                       attribute:NSLayoutAttributeCenterY
-                                                      multiplier:1
-                                                        constant:0]];
-    
-    // iOS 7 applies a transform to presented view controller's view depending on device rotation
-    // Thus we need to swap width and height constraints so presented view controler can have a proper size when in landscape
-    CGFloat width = toViewSize.width;
-    CGFloat height = toViewSize.height;
-    if (NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1)
-    {
-        if (CGAffineTransformEqualToTransform(toView.transform, CGAffineTransformIdentity)           == NO &&
-            CGAffineTransformEqualToTransform(toView.transform, CGAffineTransformMakeRotation(M_PI)) == NO)
-        {
-            width = toViewSize.height;
-            height = toViewSize.width;
-        }
-    }
-    
-    [inView addConstraint:[NSLayoutConstraint constraintWithItem:toView
-                                                       attribute:NSLayoutAttributeWidth
-                                                       relatedBy:NSLayoutRelationEqual
-                                                          toItem:nil
-                                                       attribute:NSLayoutAttributeNotAnAttribute
-                                                      multiplier:0
-                                                        constant:width]];
-    
-    [inView addConstraint:[NSLayoutConstraint constraintWithItem:toView
-                                                       attribute:NSLayoutAttributeHeight
-                                                       relatedBy:NSLayoutRelationEqual
-                                                          toItem:nil
-                                                       attribute:NSLayoutAttributeNotAnAttribute
-                                                      multiplier:0
-                                                        constant:height]];
-}
-
 #pragma mark - UIViewControllerAnimatedTransitioning
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext
@@ -118,7 +65,11 @@ static NSTimeInterval const kTransitionDuration = 2;
     if (self.mode == NGModalAnimationControllerModePresentation)
     {
         [containerView addSubview:toView];
-        [self centerView:toView withSize:toViewController.preferredContentSize inView:containerView];
+        
+        toView.translatesAutoresizingMaskIntoConstraints = NO;
+        NSDictionary * views = NSDictionaryOfVariableBindings(toView);
+        [containerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[toView]|" options:0 metrics:nil views:views]];
+        [containerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[toView]|" options:0 metrics:nil views:views]];
         
         NSLog(@"CSModalAnimationControllerModePresentation");
         NSLog(@"fromView initial frame %@", NSStringFromCGRect([transitionContext initialFrameForViewController:fromViewController]));
