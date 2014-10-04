@@ -18,6 +18,7 @@
 		2E4683D619DFEFD3001ECA2E /* UIViewController+NGModalPresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4683D519DFEFD3001ECA2E /* UIViewController+NGModalPresentation.m */; };
 		2E4683D919DFF197001ECA2E /* NGModalTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4683D819DFF197001ECA2E /* NGModalTransitioningDelegate.m */; };
 		2E4683DC19DFF39D001ECA2E /* NGModalAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4683DB19DFF39D001ECA2E /* NGModalAnimationController.m */; };
+		2E4683DF19E008B6001ECA2E /* NGPresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4683DE19E008B6001ECA2E /* NGPresentationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		2E4683D819DFF197001ECA2E /* NGModalTransitioningDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGModalTransitioningDelegate.m; sourceTree = "<group>"; };
 		2E4683DA19DFF39D001ECA2E /* NGModalAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGModalAnimationController.h; sourceTree = "<group>"; };
 		2E4683DB19DFF39D001ECA2E /* NGModalAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGModalAnimationController.m; sourceTree = "<group>"; };
+		2E4683DD19E008B6001ECA2E /* NGPresentationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGPresentationViewController.h; sourceTree = "<group>"; };
+		2E4683DE19E008B6001ECA2E /* NGPresentationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGPresentationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +146,8 @@
 				2E4683D819DFF197001ECA2E /* NGModalTransitioningDelegate.m */,
 				2E4683DA19DFF39D001ECA2E /* NGModalAnimationController.h */,
 				2E4683DB19DFF39D001ECA2E /* NGModalAnimationController.m */,
+				2E4683DD19E008B6001ECA2E /* NGPresentationViewController.h */,
+				2E4683DE19E008B6001ECA2E /* NGPresentationViewController.m */,
 			);
 			path = "Custom Modal Presentation";
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E4683D619DFEFD3001ECA2E /* UIViewController+NGModalPresentation.m in Sources */,
+				2E4683DF19E008B6001ECA2E /* NGPresentationViewController.m in Sources */,
 				2E4683B319DFE437001ECA2E /* ViewController.m in Sources */,
 				2E4683B019DFE437001ECA2E /* AppDelegate.m in Sources */,
 				2E4683D919DFF197001ECA2E /* NGModalTransitioningDelegate.m in Sources */,
